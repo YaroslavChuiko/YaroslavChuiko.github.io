@@ -1,0 +1,150 @@
+%btn-style {
+    display: inline-block;
+
+    text-align: center;
+    font-family: $font-stack;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    vertical-align: middle;
+
+    border: 1px solid $gray;
+    border-radius: 30px;
+
+    background-color: transparent;
+
+    transition: color, background-color, border-color, box-shadow, 0.2s linear;
+    cursor: pointer;
+
+    + .btn {
+        margin-left: 1rem;
+    }
+
+    @include for-phone-only {
+        display: block;
+        width: 100%;
+
+        + .btn {
+            margin-left: 0rem;
+            margin-top: 1rem;
+        }
+    }
+}
+
+.btn {
+    @extend %btn-style;
+
+    &:active {
+        outline: none;
+    }
+}
+
+// Modificators=========================
+.btn_resume {
+    //style for modal resume
+    @extend %btn-style;
+    padding: 0.69rem 1rem;
+    font-size: 0.8rem;
+    font-weight: normal;
+    min-width: 146px;
+
+    &:hover {
+        box-shadow: 2px 2px 10px rgba(#000000, 0.16);
+    }
+}
+
+// btn size=================================
+.btn_size_lg {
+    @extend %btn-style;
+    font-size: 1.06rem;
+    font-weight: normal;
+
+    border-width: 1px;
+    padding: 1.04rem 1.73rem;
+    min-width: 170px;
+
+    &:hover {
+        box-shadow: 2px 2px 10px rgba(#000000, 0.24);
+    }
+
+    @include for-tablet-landscape {
+        font-size: 0.93rem;
+        padding: 0.93rem 1.53rem;
+        min-width: 160px;
+    }
+
+    @include for-tablet-portrait {
+        font-size: 0.93rem;
+        padding: 0.8rem 1.53rem;
+        min-width: 110px;
+    }
+
+    @include for-phone-only {
+        padding: 0.8rem 1.4rem;
+        min-width: 100px;
+    }
+}
+
+.btn_size_m {
+    @extend %btn-style;
+    font-size: 0.933rem;
+    font-weight: bold;
+
+    border-width: 2px;
+    padding: 0.6rem 1.33rem;
+    min-width: 130px;
+    
+
+    &:hover {
+        box-shadow: 2px 2px 10px rgba(#000000, 0.16);
+    }
+}
+
+.btn_size_sm {
+    @extend %btn-style;
+    font-size: 0.933rem;
+    font-weight: normal;
+
+    border-width: 1px;
+    padding: 0.4rem 1.33rem;
+    min-width: 110px;
+    max-width: 140px;
+
+    &:hover {
+        box-shadow: 2px 2px 10px rgba(#000000, 0.16);
+    }
+}
+
+// btn style=========================
+.btn_color_gray {
+    color: $gray;
+    border-color: $gray;
+
+    &:hover {
+        background-color: $black;
+        border-color: $black;
+        color: $white;
+    }
+}
+
+.btn_color_white {
+    color: $gray-light;
+    border-color: $gray-light;
+
+    &:hover {
+        background-color: $white;
+        border-color: $white;
+        color: $black;
+    }
+}
+
+.btn_color_black {
+    color: $black;
+    border-color: $black;
+
+    &:hover {
+        background-color: $black;
+        border-color: $black;
+        color: $white;
+    }
+}

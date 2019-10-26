@@ -1,0 +1,131 @@
+.about__inner {
+    max-width: 1090px;
+    padding: 10% 0;
+    display: flex;
+    // flex-wrap: wrap;
+    @include for-tablet-landscape {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.about__photo,
+.about__content {
+    width: 50%;
+}
+
+.about__photo {
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 413px;
+        height: 413px;
+        background-color: #efefef;
+
+        position: absolute;
+        left: 1rem;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    img {
+        position: absolute;
+        bottom: 0;
+    }
+
+    @include for-tablet-landscape {
+        width: auto;
+        display: flex;
+        justify-content: center;
+        order: 2;
+
+        &::before {
+            width: 78%;
+            height: 70%;
+            left: 50%;
+            bottom: 0;
+            transform: translate3d(-60%, 0, 0);
+        }
+
+        img {
+            max-height: 480px;
+            position: relative;
+            left: 0;
+        }
+    }
+}
+
+.about__content {
+    padding: 2rem 0 0 3.2rem;
+
+    @include for-tablet-landscape {
+        width: 100%;
+        max-width: 750px;
+        order: 1;
+        text-align: center;
+        margin: 2rem auto;
+        padding: 0;
+    }
+
+    @include for-phone-only {
+        padding: 3rem 0rem;
+        
+        
+    }
+}
+
+.about__title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $black;
+
+    @include for-laptop {
+        font-size: 2.5rem;
+    }
+
+    @include for-tablet-landscape {
+        font-size: 2rem;
+    }
+
+    @include for-phone-only {
+        font-size: 1.5rem;
+    }
+}
+
+.about__bigtitle {
+    position: relative;
+    left: -10px;
+
+    margin-bottom: 1.4rem;
+
+    font-size: 6.1rem;
+    font-weight: bold;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: rgba($black, 0.15);
+
+    @include for-laptop {
+        font-size: 5.2rem;
+    }
+
+    @include for-tablet-landscape {
+        font-size: 3.9rem;
+    }
+
+    @include for-phone-only {
+        font-size: 3rem;
+        position: static;
+    }
+}
+
+.about__text {
+    margin-bottom: 2.6rem;
+
+    font-size: 0.8rem;
+    font-weight: 300;
+    line-height: 2;
+    color: $gray;
+}

@@ -1,0 +1,78 @@
+// .reviews {
+//     background-color: #332f30;
+//     width: 100%;
+//     height: 290px;
+//     color: #fff;
+//     position: relative;
+// }
+
+.back-shapes {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+
+    @include for-tablet-landscape {
+        top: -5%;
+        height: 110%;
+    }
+
+    @include for-phone-only {
+        top: -5%;
+        height: 120%;
+    }
+}
+
+.back-shapes img.floating {
+    position: absolute;
+    /* width:2%; */
+}
+
+@media screen and (max-width: 1400px) {
+    .back-shapes img {
+        width: 3.5%;
+    }
+}
+
+@include for-tablet-landscape {
+    .back-shapes img {
+        width: 4%;
+    }
+}
+
+@include for-tablet-portrait {
+    .back-shapes img {
+        width: 4.5%;
+    }
+}
+
+@include for-phone-only {
+    .back-shapes img {
+        width: 7%;
+    }
+}
+
+.floating {
+    animation-name: floating;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+
+    @include for-tablet-landscape {
+        animation-duration: 15s;
+    }
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0%) rotate(-55deg);
+    }
+    50% {
+        transform: translateY(-50%) rotate(55deg);
+    }
+    100% {
+        transform: translateY(0%) rotate(-55deg);
+    }
+}

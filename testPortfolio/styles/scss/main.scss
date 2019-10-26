@@ -1,0 +1,62 @@
+@import "vars";
+
+html {
+    font-size: 15px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $font-stack;
+    font-size: 1rem;
+    color: $black;
+    background-color: $white;
+
+    &.no-scroll {
+        overflow: hidden;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0 0 0.66rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+// Vendor
+@import "../vendor/slick";
+
+// Blocks
+@import "button";
+@import "bg-animation";
+@import "header";
+@import "intro";
+@import "social";
+@import "works";
+@import "about";
+@import "reviews";
+@import "blog";
+@import "footer";
+@import "modal";
+
+// Helpers
+@import "helpers";

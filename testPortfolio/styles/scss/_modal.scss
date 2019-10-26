@@ -1,0 +1,642 @@
+// 1. Modal work
+// 2. Modal resume
+// 3. Modal contact
+
+.modal {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 3rem 1rem;
+
+    background-color: rgba($black, 0.9);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    overflow-y: auto;
+
+    opacity: 0;
+    transition: opacity 0.2s linear, visibility 0.2s linear;
+    visibility: hidden;
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.modal__dialog {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: auto;
+    background-color: #fff;
+
+    transform: scale(0.7);
+    opacity: 0;
+    transition: transform 0.2s linear, opacity 0.2s linear;
+
+    &_contact {
+        max-width: 900px;
+
+        @include for-tablet-portrait {
+            max-width: 600px;
+        }
+    }
+}
+
+.modal__close {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+
+    background-color: #fff;
+    border-radius: 50%;
+    border: 0;
+
+    position: absolute;
+    top: 0.86rem;
+    right: 0.86rem;
+    z-index: 1;
+    cursor: pointer;
+
+    &:active {
+        outline: none;
+    }
+
+    svg {
+        width: 34px;
+        height: 34px;
+        transition: transform 0.2s linear;
+
+        &:hover {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+// Modal work===============================
+.modal__dialog_work {
+    @include for-tablet-landscape {
+        max-width: 790px;
+    }
+}
+.modal-work {
+    display: flex;
+    height: 790px;
+
+    & .slick-track {
+        height: 100%;
+    }
+
+    @include for-tablet-landscape {
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+.modal-work__preview {
+    width: 65%;
+    position: relative;
+    overflow: hidden;
+
+    @include for-tablet-landscape {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+.modal-work__photo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.modal-work__content {
+    width: 35%;
+    padding: 3.3rem 0rem 1rem 1.73rem;
+    position: relative;
+
+    @include for-tablet-landscape {
+        width: 100%;
+        padding: 1.5rem 2rem 4rem;
+    }
+
+    @include for-phone-only {
+        padding: 1.5rem 1rem 4rem;
+    }
+}
+
+.modal-work__header {
+    margin-bottom: 2.2rem;
+
+    @include for-tablet-landscape {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.modal-work__title {
+    margin-bottom: 0.2rem;
+
+    font-size: 2.13rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $black;
+
+    @include for-phone-only {
+        font-size: 1.6rem;
+    }
+}
+
+.modal-work__info {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: $gray;
+
+    @include for-phone-only {
+        font-size: 1rem;
+    }
+}
+
+.modal-work__info-divider {
+    margin: 0 0.73rem;
+}
+
+.modal-work__client {
+    margin-bottom: 2.2rem;
+
+    @include for-tablet-landscape {
+        margin-bottom: 1rem;
+    }
+}
+
+.modal-work__client-title {
+    margin-bottom: 0.2rem;
+    font-size: 1.06rem;
+    font-weight: bold;
+    color: $black;
+}
+
+.modal-work__client-company {
+    font-size: 0.93rem;
+    font-style: italic;
+    text-transform: capitalize;
+    color: $gray;
+}
+
+.modal-work__text {
+    max-width: 290px;
+    max-height: 450px;
+    height: auto;
+    overflow-y: hidden;
+
+    font-size: 0.8rem;
+    font-weight: 300;
+    line-height: 2;
+    color: $gray;
+
+    p {
+        max-width: 270px;
+    }
+
+    &::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: rgb(230, 230, 230);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $black;
+        border-radius: 2px;
+    }
+
+    // &::-webkit-scrollbar-button {  background-color: #666; }
+
+    // &::-webkit-scrollbar-track-piece {
+    //     background-color: rgb(192, 191, 191);
+    // }
+
+    &:hover {
+        overflow-y: auto;
+    }
+
+    @include for-laptop {
+        overflow-y: auto;
+    }
+
+    @include for-tablet-landscape {
+        width: 100%;
+        max-width: 100%;
+        max-height: 315px;
+        font-size: 0.9rem;
+
+        & p {
+            max-width: 100%;
+            padding: 0 1rem;
+        }
+    }
+
+    @include for-phone-only {
+        max-height: 450px;
+    }
+}
+
+.modal-work__footer {
+    width: 100%;
+    padding: 0 1.73rem 1.2rem 1.73rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+
+    @include for-tablet-landscape {
+        padding-bottom: 2rem;
+        display: none;
+    }
+}
+
+.modal-work__btn {
+    padding: 0;
+
+    background: none;
+    border: 0;
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: 0.94rem;
+    text-transform: uppercase;
+    color: $black;
+
+    svg {
+        width: 14px;
+        height: 14px;
+        fill: $black;
+
+        transform: translate3d(0, 2px, 0);
+    }
+}
+
+//Modal resume ==========================
+.modal__resume {
+    padding: 5rem 1rem;
+
+    @include for-tablet-portrait {
+        padding: 3rem 1rem;
+    }
+}
+
+.modal__title {
+    margin-bottom: 3.6rem;
+
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: $black;
+
+    @include for-tablet-landscape {
+        margin-bottom: 2.5rem;
+    }
+
+    @include for-tablet-portrait {
+        font-size: 2.5rem;
+    }
+
+    @include for-phone-only {
+        font-size: 2.2rem;
+    }
+}
+
+.timeline {
+    position: relative;
+    width: 100%;
+    max-width: 768px;
+    display: flex;
+
+    margin: 4.5rem auto;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100%;
+        background-color: $gray;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        z-index: 1;
+    }
+
+    @include for-tablet-landscape {
+        margin: 2rem auto 3rem;
+    }
+
+    @include for-tablet-portrait {
+        margin: 2rem auto 2rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &::before {
+            display: none;
+        }
+    }
+}
+
+.timeline__col {
+    width: 50%;
+
+    &_left {
+        text-align: right;
+        padding-right: 3.2rem;
+    }
+
+    &_right {
+        padding-left: 3.2rem;
+    }
+
+    @include for-tablet-portrait {
+        width: 100%;
+        text-align: center;
+        &_left {
+            padding-right: 0rem;
+        }
+        &_right {
+            padding-left: 0rem;
+        }
+    }
+}
+
+%timeline__title-style {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $black;
+}
+
+.timeline__title {
+    @extend %timeline__title-style;
+    margin-bottom: 2.6rem;
+
+    @include for-tablet-portrait {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.timeline__subtitle {
+    @extend %timeline__title-style;
+    margin-bottom: 1.8rem;
+
+    @include for-tablet-portrait {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.timeline__item {
+    &:not(:last-child) {
+        margin-bottom: 2.53rem;
+    }
+
+    @include for-tablet-portrait {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+.timeline__date {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 0.93rem;
+    text-decoration: underline;
+    color: $black;
+}
+
+.timeline__caption {
+    margin-bottom: 0.33rem;
+
+    font-size: 1.06rem;
+    font-weight: bold;
+    color: $black;
+}
+
+.timeline__position {
+    font-size: 0.93rem;
+    font-style: italic;
+    color: $black;
+}
+
+.timeline__text {
+    margin-top: 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: $gray;
+}
+
+.timeline__institution {
+    font-size: 0.93rem;
+    font-style: normal;
+    color: $black;
+}
+
+.skills {
+    margin-bottom: 2.13rem;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+
+    @include for-tablet-portrait {
+        margin: 0 auto 2.13rem;
+        max-width: 280px;
+    }
+}
+
+.skills__item {
+    margin-bottom: 0.33rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skills__title {
+    font-size: 0.93rem;
+    font-weight: 300;
+    color: $black;
+}
+
+.progress-bar {
+    width: 140px;
+    height: 6px;
+
+    background-color: #efefef;
+}
+
+.progress-bar__progress {
+    height: 100%;
+    background-color: $gray;
+
+    transition: width 0.2s linear;
+}
+
+.awards__item {
+    display: flex;
+    @include for-tablet-portrait {
+        flex-direction: column;
+    }
+}
+
+.awards__content {
+    margin-left: 1.33rem;
+
+    @include for-tablet-portrait {
+        margin-left: 0;
+    }
+}
+
+// Modal contact===========================
+.modal-contact {
+    display: flex;
+    min-height: 676px;
+}
+
+.modal-contact__content {
+    width: 48%;
+    padding: 1.86rem 2.33rem 2.5rem;
+
+    @include for-tablet-portrait {
+        width: 100%;
+    }
+
+    @include for-phone-only {
+        padding: 2rem 1rem;
+    }
+}
+
+.modal-contact__photo {
+    width: 52%;
+
+    @include for-tablet-portrait {
+        &.img {
+            display: none;
+        }
+    }
+}
+
+.modal-contact__title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $black;
+
+    @include for-tablet-portrait {
+        font-size: 2.5rem;
+    }
+
+    @include for-phone-only {
+        font-size: 2.2rem;
+    }
+}
+
+.modal-contact__subtitle {
+    margin-bottom: 2rem;
+
+    font-size: 1.06rem;
+    text-transform: uppercase;
+    color: $black;
+
+    @include for-tablet-portrait {
+        font-size: 1rem;
+    }
+}
+
+.modal-contact__contacts {
+    margin-bottom: 3rem;
+}
+
+.modal-contact__link {
+    display: flex;
+    align-items: center;
+    font-size: 0.93rem;
+    font-weight: 300;
+    text-decoration: none;
+    color: $black;
+    fill: $black;
+
+    &:not(:last-child) {
+        margin-bottom: 0.66rem;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    svg {
+        margin-right: 8px;
+        max-width: 14px;
+        max-height: 14px;
+    }
+}
+
+.form {
+    & > ::placeholder {
+        font-family: $font-stack;
+        font-size: 0.8rem;
+        font-weight: 300;
+        color: $black;
+    }
+
+    & > :focus {
+        outline: none;
+        background-color: $black;
+        border-color: $black;
+        color: $white;
+        box-shadow: 2px 2px 10px rgba(#000000, 0.24);
+    }
+
+    & > :focus::-webkit-input-placeholder {
+        color: $gray-light;
+        transition: color 0.2s linear;
+    }
+}
+
+.form__label {
+    margin-bottom: 0.66rem;
+
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: $black;
+}
+
+.form__field {
+    margin-bottom: 2rem;
+
+    display: block;
+    width: 100%;
+    padding: 1.33rem 1.86rem;
+    background-color: $white;
+    border: 1px solid rgba(#707070, 0.3);
+    border-radius: 27px;
+
+    font-family: $font-stack;
+    font-size: 0.8rem;
+
+    transition: background-color, box-shadow, border-color, color, 0.2s linear;
+
+    &_textarea {
+        width: 100%;
+        min-height: 200px;
+        resize: none;
+        overflow: auto;
+    }
+}

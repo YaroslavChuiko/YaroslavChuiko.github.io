@@ -1,0 +1,147 @@
+.blog {
+    margin-top: 18rem;
+    margin-bottom: 8rem;
+
+    @include for-tablet-portrait {
+        margin-top: 16rem;
+        margin-bottom: 4rem;
+    }
+}
+
+.blog__header {
+    margin-bottom: 3.6rem;
+    text-align: center;
+
+    @include for-phone-only {
+        margin-bottom: 3rem;
+    }
+}
+
+.blog__title {
+    margin-bottom: 0.3rem;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $black;
+
+    @include for-tablet-landscape {
+        font-size: 2.6rem;
+    }
+
+    @include for-tablet-portrait {
+        font-size: 2.4rem;
+    }
+}
+
+.blog__text {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: $gray-light;
+
+    @include for-tablet-landscape {
+        font-size: 1.1rem;
+    }
+    @include for-tablet-portrait {
+    }
+}
+
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1rem 0.66rem;
+
+    @include for-tablet-portrait {
+        justify-content: center;
+    }
+}
+
+.artivles__col {
+    width: 33.33%;
+    padding: 0 1rem 2rem;
+
+    @include for-tablet-portrait {
+        width: 100%;
+        max-width: 400px;
+        padding: 0 1rem 3rem;
+    }
+}
+
+.articles__item {
+    & .btn {
+        max-width: 150px;
+    }
+}
+
+.articles__header {
+    position: relative;
+    margin-bottom: 1.35rem;
+}
+
+.articles__date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 77px;
+    height: 77px;
+
+    background-color: $black;
+
+    font-size: 1.06rem;
+    line-height: 1.4;
+    font-weight: bold;
+    text-transform: lowercase;
+    text-align: center;
+    color: $white;
+}
+
+.articles__content {
+    margin-bottom: 2rem;
+}
+
+.articles__title {
+    margin-bottom: 0.6rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $black;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.articles__cat {
+    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+    color: $black;
+    text-transform: uppercase;
+}
+
+.articles__text {
+    font-size: 0.8rem;
+    line-height: 2;
+    font-weight: 300;
+    color: $gray;
+}
+
+.blog__footer {
+    text-align: right;
+}
+
+.blog__link {
+    font-size: 0.93rem;
+    color: $gray;
+
+    &:hover {
+        text-decoration: none;
+    }
+}

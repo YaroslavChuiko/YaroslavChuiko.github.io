@@ -1,0 +1,26 @@
+$font-stack: "Montserrat", sans-serif;
+$black: #2b2a2c;
+$gray: #6a696b;
+$gray-light: #8d8d8e;
+$white: #fff;
+
+@mixin for-laptop {
+    @media (max-width: 1200px) {
+        @content;
+    }
+}
+@mixin for-tablet-landscape {
+    @media (max-width: 991.98px) {
+        @content;
+    }
+}
+@mixin for-tablet-portrait {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+@mixin for-phone-only {
+    @media (max-width: 578px) {
+        @content;
+    }
+}

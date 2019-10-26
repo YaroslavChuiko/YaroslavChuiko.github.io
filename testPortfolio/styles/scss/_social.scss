@@ -1,0 +1,94 @@
+.social {
+    display: flex;
+    align-items: center;
+}
+
+.intro__social {
+    margin-bottom: 3rem;
+
+    @include for-tablet-portrait {
+        margin-bottom: 2rem
+    }
+
+    @include for-phone-only {
+        margin-bottom: 3rem
+    }
+}
+
+.social__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    fill: $white;
+}
+
+.social__icon {
+    max-height: 23px;
+    z-index: 1;
+
+    @include for-phone-only {
+        max-height: 20px;
+    }
+}
+
+.social__link_intro {
+    width: 41px;
+    height: 41px;
+    margin-right: 10px;
+    fill: $white;
+
+    @include for-phone-only {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+.social__link_footer {
+    width: 25px;
+    height: auto;
+    margin-left: 1rem;
+    fill: $gray-light;
+    transition: fill 0.2s linear;
+
+    &:hover {
+        fill: $white;
+    }
+
+    & .social__icon {
+        max-height: 21px;
+    }
+}
+
+@mixin social-effect($color) {
+    background-color: $color;
+    transition: box-shadow 0.2s linear;
+    &:hover {
+        box-shadow: 0px 0px 10px rgba($color, 0.8);
+    }
+}
+
+.social__link_color_behance {
+    @include social-effect(#1869ff);
+}
+
+.social__link_color_dribbble {
+    @include social-effect(#e51a68);
+}
+
+.social__link_color_linkedin {
+    @include social-effect(#007bb6);
+}
+
+.social__link_color_facebook {
+    @include social-effect(#3a5898);
+}
+
+.social__link_color_instagram {
+    @include social-effect(#13578a);
+}
+
+.social__link_color_twitter {
+    @include social-effect(#56acef);
+}
