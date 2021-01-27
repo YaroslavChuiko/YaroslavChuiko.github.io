@@ -248,11 +248,11 @@ p {
     width: 100%;
     background-color: #3c3c3c;
     pointer-events: none;
+    font-weight: normal;
     transition: bottom 0.2s ease-in;
     z-index: -1; }
   .btn--style_black:hover {
-    color: #fff;
-    font-weight: bold; }
+    color: #fff; }
     .btn--style_black:hover::before {
       bottom: 0; }
 
@@ -825,7 +825,11 @@ p {
   width: 100%;
   background-image: url(../img/contact-bg.png);
   background-repeat: no-repeat;
-  background-position: top right; }
+  background-position: top right;
+  background-size: cover; }
+  @media (max-width: 1200px) {
+    .contact {
+      background-size: auto; } }
 
 .contact__inner {
   width: 100%;
@@ -839,7 +843,7 @@ p {
       justify-content: center; } }
 
 .contact__content {
-  width: 55%;
+  width: 47%;
   display: flex;
   flex-direction: column;
   justify-content: center;
