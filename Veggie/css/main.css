@@ -841,6 +841,9 @@ p {
     .contact__inner {
       align-items: center;
       justify-content: center; } }
+  @media (max-width: 578px) {
+    .contact__inner {
+      padding-bottom: 30px; } }
 
 .contact__content {
   width: 47%;
@@ -982,11 +985,13 @@ p {
 .footer__text {
   font-size: 16px;
   font-family: "Merriweather", serif;
+  text-align: center;
   color: black;
   font-weight: 300; }
   @media (max-width: 578px) {
     .footer__text {
-      order: 2; } }
+      order: 2;
+      font-size: 14px; } }
 
 .footer__social {
   display: flex;
