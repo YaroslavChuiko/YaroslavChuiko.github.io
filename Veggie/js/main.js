@@ -21,14 +21,6 @@ $(function () {
       url: "php/main.php",
       data: $(this).serialize()
     }).done(function () {
-      // $("#modal_thanks").addClass("show");
-      // setTimeout(function () {
-      //     $("#modal_thanks")
-      //         .find(".modal__dialog--thanks")
-      //         .css({ transform: "scale(1)", opacity: "1" });
-      // }, 100);
-      // $("body").addClass("no-scroll");
-      // $(this).find("input").val("");
       $("#form").trigger("reset");
     });
     return false;
@@ -143,19 +135,7 @@ try {
 
   for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
     _loop2();
-  } // for (const link of navLinks) {
-  //     link.addEventListener("click", clickHandler);
-  // }
-  // function clickHandler(e) {
-  //     e.preventDefault();
-  //     const href = this.getAttribute("href");
-  //     const offsetTop = document.querySelector(href).offsetTop;
-  //     scroll({
-  //       top: offsetTop,
-  //       behavior: "smooth"
-  //     });
-  //   }
-  ///scroll to top btn
+  }
 
 } catch (err) {
   _iterator2.e(err);
